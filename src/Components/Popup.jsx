@@ -30,7 +30,7 @@ const Popup = ({ note, setNote, setNotes }) => {
                         <span>{note.trim().length}/200</span>
                     </div>
                 </div>
-                <button className="save-button" onClick={addNote}>save</button>
+                <button type='submit' className="save-button" onClick={addNote}>save</button>
             </div>
         </div>
     );

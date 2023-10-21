@@ -130,3 +130,7 @@ body{
     padding-top: 12px;
     color: white;
 }
+
+.icon{
+    cursor: pointer;
+}
