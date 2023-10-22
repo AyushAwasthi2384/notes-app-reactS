@@ -1,19 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { RxCross1 } from "react-icons/rx";
+import { NoteInfo } from '../App';
 
 
-const Popup = ({ note, setNote, setNotes }) => {
+const Popup = () => {
+    const { note, setNote, addNote, title, setTitle } = useContext(NoteInfo)
     // const [note, setNote] = useState("");
     // const [notes, setNotes] = useState([]);
-
-
-    const addNote = () => {
-        if (note.trim()) {
-            const dat = { id: crypto.randomUUID(), txt: note.trim(), date: new Date().toLocaleDateString() };
-            setNotes(pre => [...pre, dat]);
-            setNote("");
-        }
-    }
 
     const close_popup = () => {
         document.querySelector(".add-popup").style = "top:160vh;"
@@ -24,13 +17,14 @@ const Popup = ({ note, setNote, setNotes }) => {
             <div className="add-popup">
                 <button className='rem-p' onClick={close_popup}> <RxCross1 className='add-icon' /> </button>
 
-                <div className="note note-add">
+                <div className="note-add">
+                    <input className='title-note' value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Enter Title' type="text" />
                     <textarea className='txt-note' value={note} onChange={(e) => setNote(e.target.value)} placeholder='Write your note here'></textarea>
-                    <div>
-                        <span>{note.trim().length}/200</span>
+                    <div style={{width: "100%"}}>
+                        <span>{note?.trim().length}/200</span>
                     </div>
                 </div>
-                <button type='submit' className="save-button" onClick={addNote}>save</button>
+                <button type='submit' className="save-button" onClick={addNote}>Save</button>
             </div>
         </div>
     );

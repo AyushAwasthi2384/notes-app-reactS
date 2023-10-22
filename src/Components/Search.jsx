@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { MdSearch } from 'react-icons/md'
+import { NoteInfo } from '../App';
 
 
-const Search = ({search, setSearch}) => {
-
+const Search = () => {
+    const {search, setSearch} = useContext(NoteInfo);
     return (
         <div>
             <div className="search">
