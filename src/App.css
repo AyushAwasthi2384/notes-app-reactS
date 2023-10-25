@@ -220,19 +220,29 @@ body{
 }
 
 .note:hover{
-    animation: animate-note 1s ;
+    animation: animate-note .3s;
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    transition-duration: 0.3s;
+    animation-duration: 0.2s;
 }
 
 @keyframes animate-note{
     0%{
-        background: linear-gradient(160deg, #fff, #01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80);
+        background: linear-gradient(160deg, #ffffff80, #01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80);
+    }
+    25%{
+        background: linear-gradient(160deg, #01346b80,#01346b80,#01346b80,#01346b80,#ffffff80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80);
     }
     50%{
-        background: linear-gradient(160deg, #01346b80,#01346b80,#01346b80,#01346b80,#fff,#01346b80,#01346b80,#01346b80,#01346b80);
+        background: linear-gradient(160deg, #01346b80,#01346b80,#01346b80,#01346b80, #01346b80,#01346b80,#01346b80,#01346b80,#ffffff80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80);
+
+    }
+    75%{
+        background: linear-gradient(160deg, #01346b80,#01346b80,#01346b80,#01346b80, #01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#ffffff80,#01346b80,#01346b80,#01346b80,#01346b80);
 
     }
     100%{
-        background: linear-gradient(160deg, #01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80, #fff);
+        background: linear-gradient(160deg, #01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80,#01346b80, #ffffff80);
 
     }
 }

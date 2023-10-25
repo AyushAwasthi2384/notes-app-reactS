@@ -18,12 +18,11 @@ const Note = ({ text, date, delfn, id, title }) => {
     return (
         <div>
             <div className='note'>
-                <p className='note-title'><span className='title-head'>Title:</span> {title}</p>
+                <p className='note-title'><span className='title-head'></span> {title}</p>
                 {
                     edit ?
                         <form>
                             <textarea className='input-note' type='text' value={edited} onChange={(e) => { setEdited(e.target.value) }}></textarea>
-                            {/* <button onClick={saveNote}>save</button> */}
                         </form>
                         : <p className='note-content'>{edited}</p>
                 }
