@@ -6,6 +6,8 @@ import Search from './Components/Search';
 import Popup from './Components/Popup';
 import Notes from './Components/Notes';
 
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 export const NoteInfo = createContext(null)
 
 function App() {
@@ -58,7 +60,12 @@ function App() {
       <div className="notes-app">
         <NoteInfo.Provider value={value}>
           <Search />
-          <Notes />
+          {/* <Notes /> */}
+          {
+            notes.length !=0
+            ? <Notes />
+            : <h2 style={{color: "#fff", margin: "auto", height: "2rem", width: "max-content", textAlign: "center",marginTop:"2rem"}}>Noting to show</h2>
+          }
           <Popup />
         </NoteInfo.Provider>
         <button className='add-p' onClick={popup}> <BsPlusLg className='add-icon' /> </button>
